@@ -76,5 +76,16 @@ class bootstrap_5_wp_nav_menu_walker extends Walker_Nav_menu
   }
 }
 
-// register a new menu
-register_nav_menu('main-menu', 'Main menu');
+if (!function_exists('laguild_setup')) {
+  function laguild_setup() {
+    register_nav_menu('main-menu', 'Main menu');
+
+    wp_enqueue_style('main', get_template_directory_uri() . '/assets/css/main.css');
+    wp_enqueue_script('main', get_template_directory_uri() . '/assets/js/bundle.js');
+
+    add_theme_support('automatic-feed-links');
+    add_theme_support('title-tag');
+    add_theme_support('customize-selective-refresh-widgets');
+  }
+}
+add_action('after_setup_theme', 'laguild_setup');
