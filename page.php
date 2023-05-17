@@ -6,7 +6,7 @@ get_header();
   <div id="primary" class="content-area">
 
     <div class="row">
-      <div class="col-md-8 col-xxl-9">
+      <div class="col-12">
 
         <main id="main" class="site-main">
 
